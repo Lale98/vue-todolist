@@ -36,7 +36,6 @@ var app = new Vue(
                 },
             ],
             newToDo: '',
-            done: false
         },
         methods: {
             removeToDo: function(indexToRemove) {
@@ -44,13 +43,13 @@ var app = new Vue(
             },
             addToDo: function() {
                 if (this.newToDo.trim().length > 0) {
-                    this.toDoList.push({text: this.newToDo, completed: "false"});
+                    this.toDoList.push({text: this.newToDo, completed: false});
                     this.newToDo = "";
                 }
             },
-            isComplete: function(index) {
-                console.log(this.toDoList[index].completed);
-                this.toDoList[index].completed = !this.toDoList[index].completed;
+            isComplete: function(list, index) {
+                console.log(list[index].completed);
+                list[index].completed = !list[index].completed;
                 
             }
         }
