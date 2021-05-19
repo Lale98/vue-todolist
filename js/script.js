@@ -16,26 +16,27 @@ var app = new Vue(
             toDoList: [
                 {
                     text: "Fare la spesa",
-                    completed: "false"
+                    completed: false
                 },
                 {
                     text: "Lavare la macchina",
-                    completed: "false"
+                    completed: false
                 },
                 {
                     text: "Cambiare la lampadina",
-                    completed: "false"
+                    completed: false
                 },
                 {
                     text: "Comprare un PC",
-                    completed: "false"
+                    completed: false
                 },
                 {
                     text: "Fare benzina",
-                    completed: "false"
+                    completed: false
                 },
             ],
-            newToDo: ''
+            newToDo: '',
+            done: false
         },
         methods: {
             removeToDo: function(indexToRemove) {
@@ -46,6 +47,11 @@ var app = new Vue(
                     this.toDoList.push({text: this.newToDo, completed: "false"});
                     this.newToDo = "";
                 }
+            },
+            isComplete: function(index) {
+                console.log(this.toDoList[index].completed);
+                this.toDoList[index].completed = !this.toDoList[index].completed;
+                
             }
         }
     }
