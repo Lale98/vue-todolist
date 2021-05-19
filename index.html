@@ -16,8 +16,10 @@
                 <button @click="addToDo">Aggiungi</button>
             </div>
             <ul v-if="toDoList.length > 0">
-                <li v-for="(toDo, index) in toDoList" @click="isComplete(toDoList, index)" :class="{barText: toDoList[index].completed}">
-                    {{toDo.text}}
+                <li v-for="(toDo, index) in toDoList">
+                    <span @click="isComplete(toDoList, index)" :class="{barText: toDoList[index].completed}">
+                        {{toDo.text}}
+                    </span>
                     <i class="fas fa-times-circle" @click="removeToDo(index)"></i>
                 </li>
             </ul>
