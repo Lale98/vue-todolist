@@ -42,8 +42,10 @@ var app = new Vue(
                 this.toDoList.splice(indexToRemove,1);
             },
             addToDo: function() {
-                this.toDoList.push({text: this.newToDo, completed: "false"});
-                this.newToDo = "";
+                if (this.newToDo.trim().length > 0) {
+                    this.toDoList.push({text: this.newToDo, completed: "false"});
+                    this.newToDo = "";
+                }
             }
         }
     }

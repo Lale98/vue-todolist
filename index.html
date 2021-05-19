@@ -11,7 +11,7 @@
     <body>
         <div id="root">
             <div>
-                <input type="text" placeholder="inserisci una task" v-model="newToDo">
+                <input type="text" placeholder="inserisci una task" v-model="newToDo" @keydown.enter="addToDo">
                 <button @click="addToDo">Aggiungi</button>
             </div>
             <ul v-if="toDoList.length > 0">
